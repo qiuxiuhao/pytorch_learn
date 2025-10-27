@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 from torch.utils.data import TensorDataset, DataLoader
 
-#���ݼ���
+#数据来源：https://www.kaggle.com/datasets/zalando-research/fashionmnist
 fashion_train = pd.read_csv('./data/fashion-mnist_train.csv')
 fashion_test = pd.read_csv('./data/fashion-mnist_test.csv')
 
@@ -139,4 +139,5 @@ print('真实标签值:',y_test[666].item())
 #预测标签值:
 output = model(x_test[666].unsqueeze(0).to(device))
 _,pred_label = torch.max(output,dim=1)
+
 print('预测标签值:',pred_label.item())
